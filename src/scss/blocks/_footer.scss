@@ -1,0 +1,183 @@
+.footer {
+    background-color: $colorBlack;
+    color: $colorWhite;
+    font-size: 20px;
+
+    &__container {
+        @include adaptiveValue("padding-top", 58, 30);
+        @include adaptiveValue("padding-bottom", 47, 30);
+    }
+    &__top {
+        display: grid;
+        grid-template-columns: 468px 1fr 424px;
+        margin-bottom: 30px;
+        @include adaptiveValue("column-gap", 30, 10);
+        @media (max-width: $md) {
+            grid-template-columns: 1fr;
+            row-gap: 30px;
+        }
+    }
+
+    &__company-descr,
+    &__company-address,
+    &__company-time {
+        font-size: 20px;
+        line-height: 120%;
+        margin: 0 0 33px 0;
+    }
+    &__bottom {
+        text-align: center;
+    }
+    &__title {
+        margin-bottom: 45px;
+        font-size: 25px;
+        font-family: $boldFont;
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @media (max-width: $md) {
+            align-items: start;
+        }
+    }
+}
+
+.logo-footer {
+    display: flex;
+    align-items: start;
+    gap: 22px;
+    margin: 0 0 30px 0;
+    @media (max-width: $md) {
+        justify-content: center;
+    }
+
+    &__logo {
+        max-width: 130px;
+        @include adaptiveValue("max-width", 130, 80);
+        img {
+            width: 100%;
+        }
+    }
+    &__company {
+        font-family: $boldFont;
+        font-size: 35px;
+        @include adaptiveValue("font-size", 35, 24);
+        text-transform: uppercase;
+        line-height: 1.1;
+        margin-bottom: 5px;
+    }
+    &__description {
+        @include adaptiveValue("font-size", 20, 16);
+        line-height: calc(20 / 16 * 100%);
+    }
+}
+
+.social-footer {
+    margin: 0 0 30px 0;
+    @media (max-width: $md) {
+        display: flex;
+        justify-content: center;
+        
+    }
+    &__list {
+        padding: 0 0 0 10px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 17px;
+    }
+    &__link {
+        font-size: 35px;
+        color: $colorWhite;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        &:hover {
+            color: $placeholder;
+        }
+    }
+}
+
+.nav-footer {
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+    &__link {
+        color: $colorWhite;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 18px;
+        transition: color 0.3s ease-in;
+
+        &:hover {
+            color: $placeholder;
+        }
+    }
+}
+
+.connect-footer {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: $lg) {
+        order: -1;
+    }
+
+    &__item {
+        display: flex;
+        margin: 0 0 30px 0;
+        &_content_messengers {
+            justify-content: center;
+        }
+    }
+
+    &__icon {
+        font-size: 60px;
+        @media (max-width: $lg) {
+            font-size: 40px;
+        }
+    }
+    &__text {
+        margin: 0 0 0 15px;
+    }
+    &__link {
+        font-size: 35px;
+        display: block;
+        width: 100%;
+        font-family: $boldFont;
+        text-decoration: none;
+        color: $colorWhite;
+        transition: color 0.3s ease-in;
+        @media (max-width: $lg) {
+            font-size: 24px;
+        }
+
+        &:hover {
+            color: $placeholder;
+        }
+        &.get-consultation__link {
+            font-size: 16px;
+            text-decoration: underline;
+            text-decoration-style: dashed;
+            text-decoration-thickness: 1px;
+            text-decoration-line: underline;
+            margin: 0 0 0 10px;
+            font-family: $mainFont;
+            text-align: left;
+            line-height: 1.5;
+        }
+    }
+}
+
+.footer-messengers {
+    display: flex;
+    justify-content: flex-end;
+    gap: 45px;
+    &__item {
+        font-size: 40px;
+    }
+    &__link {
+        color: $colorWhite;
+        text-decoration: none;
+    }
+}

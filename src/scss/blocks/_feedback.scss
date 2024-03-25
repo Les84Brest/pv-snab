@@ -1,0 +1,107 @@
+.feedback {
+    &__body {
+        display: flex;
+        gap: 30px;
+        @media (max-width: $md) {
+            flex-direction: column-reverse;
+            gap: 20px;
+        }
+    }
+
+    &__photo {
+        flex: 1 0 auto;
+        @media (max-width: $md) {
+            width: 50%;
+            aspect-ratio: 4 / 4.43;
+            margin: 0 auto;
+        }
+    }
+    &__image {
+        object-fit: contain;
+    }
+    &__content {
+        flex: 0 1 572px;
+        @media (max-width: $lg) {
+            flex: 0 1 auto;
+        }
+        @media (max-width: $md) {
+            flex: 1 0 100%;
+        }
+    }
+    &__title {
+        font-family: $boldFont;
+        color: $colorBlack;
+        margin: 0 0 30px 0;
+        font-size: 35px;
+    }
+}
+
+%input-common {
+    width: 100%;
+    font-family: $mainFont;
+    font-size: 16px;
+    background: transparent;
+    border-radius: 0;
+    transition: all 0.4s ease;
+    border: none;
+    border-bottom: 1px solid $placeholder;
+
+    &:focus {
+        border-bottom: 1px solid $colorBlack;
+        outline: none;
+    }
+}
+
+.form-field {
+    position: relative;
+    &:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &__input {
+        @extend %input-common;
+        height: 70px;
+        padding: 0;
+    }
+
+    &__textarea {
+        @extend %input-common;
+        padding: 26px 0 0;
+        min-height: 140px;
+        resize: vertical;
+    }
+    input[type="checkbox"] {
+        display: none;
+    }
+    &__agreement {
+        margin: 30px 0 30px 0;
+    }
+    input[type="checkbox"]:checked + &__label::before {
+        background: url("../img/checkbox-marked.svg") 0 0 / cover no-repeat;
+    }
+    &__label {
+        font-size: 18px;
+        line-height: 1.2;
+        color: $colorBlack;
+        display: block;
+        padding: 5px 0 0 40px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url("../img/checkbox-empty.svg") 0 0 / cover no-repeat;
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            transition: 0.3s ease-in;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+    }
+}

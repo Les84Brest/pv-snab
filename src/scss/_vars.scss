@@ -1,0 +1,45 @@
+// VARIABLES
+
+//fonts
+$mainFont: "Montserrat", sans-serif;
+$boldFont: "Exo2", sans-serif;
+$fontSize: 16px;
+$lineheight: 1;
+
+//colors
+$accent: #e85a50;
+$placeholder: #8e8d89;
+$colorWhite: #f3f3f7;
+$colorBlack: #20325a;
+$textColor: #161515;
+$sandYellow: #eae8dc;
+
+// НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина полотна (макета)
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1440;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+//Breakpoints
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+//mobile-first
+$xsm: 479.98px;
+$smm: 575.98px;
+$mdm: 767.98px;
+$lgm: 991.98px;
+$xlm: 1199.98px;
+$xxlm: 1399.98px;

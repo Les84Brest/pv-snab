@@ -1,0 +1,171 @@
+.services {
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+    &__row {
+        display: flex;
+        @include adaptiveValue("gap", 53, 20);
+        @include adaptiveValue("margin-bottom", 50, 20);
+        @media (max-width: $md) {
+            flex-direction: column;
+        }
+    }
+    }
+    
+
+.card-service {
+    box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.19);
+    flex: 1 1 auto;
+    border-radius: 10px;
+    padding: 35px;
+    transition: box-shadow 0.3s ease-in;
+    min-height: 350px;
+    background-color: $colorBlack;
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+    @media (any-hover: hover) {
+        &:hover {
+            box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.6);
+        }
+    }
+    @media (max-width: $lg) {
+        flex: 0 1 auto;
+        padding-bottom: 150px;
+    }
+    &_dark {
+        color: $sandYellow;
+        .card-service__more {
+            color: $sandYellow;
+        }
+    }
+    &__title {
+        font-size: 35px;
+        @include adaptiveValue("font-size", 35, 25);
+        font-family: $boldFont;
+        max-width: 512px;
+        margin: 0 0 calc(16px / 35px * 1em) 0;
+    }
+
+    &__description {
+        max-width: 512px;
+        color: $placeholder;
+        font-weight: 500;
+        line-height: 1.1;
+        margin: 0 0 35px 0;
+    }
+    &__more {
+        @include adaptiveValue("font-size", 24, 18);
+        text-decoration: none;
+        color: $colorBlack;
+        font-weight: 500;
+    }
+    &_size_large {
+        flex: 1 1 calc(7 / 12 * 100%);
+        background-color: $sandYellow;
+        @media (max-width: $lg) {
+            flex: 0 1 auto;
+        }
+    }
+
+    &_video::before,
+    &_skud::before,
+    &_alarm::before,
+    &_alarm::after,
+    &_electric::before {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        z-index: -1;
+        background-size: cover;
+        transition: all 1s ease-in;
+    }
+
+    &_video {
+        &::before {
+            right: 0;
+            bottom: 0;
+            width: 234px;
+            height: 331px;
+            background-image: url("../img/services/cctv.png");
+            background-position: 100% 100%;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    &_electric {
+        &::before {
+            right: 0;
+            bottom: 0;
+            width: 292px;
+            height: 240px;
+            background-image: url("../img/services/screpper.png");
+            background-position: 100% 100%;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    transform: scale(1.2) rotate(-5deg);
+                }
+            }
+        }
+    }
+    &_skud {
+        &::before {
+            left: -44px;
+            bottom: -32px;
+            width: 323px;
+            height: 265px;
+            background-image: url("../img/services/skud.png");
+            background-position: 100% 100%;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+    &_alarm {
+        &::before {
+            left: 0;
+            bottom: 0;
+            width: 254px;
+            height: 255px;
+            background-image: url("../img/services/datchik.png");
+            background-position: 100% 100%;
+        }
+        &::after {
+            left: 0;
+            bottom: 0;
+            width: 341px;
+            height: 171px;
+            background-image: url("../img/services/datchik-smoke.png");
+            background-position: 100% 100%;
+            opacity: 0;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::after {
+                    opacity: 1;
+                }
+                &::before {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+
+    &__link-icon {
+        font-size: 18px;
+    }
+}

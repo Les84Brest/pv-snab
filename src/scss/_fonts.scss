@@ -1,0 +1,49 @@
+@include font("Montserrat", normal, 400, "../fonts/Montserrat-Regular.woff2", "../fonts/Montserrat-Regular.woff2");
+@include font("Montserrat", normal, 500, "../fonts/Montserrat-Medium.woff2", "../fonts/Montserrat-Medium.woff2");
+@include font("Exo2", normal, 900, "../fonts/Exo2-Black.woff2", "../fonts/Exo2-Black.woff");
+@include font("Exo2", normal, 800, "../fonts/Exo2-Bold.woff2", "../fonts/Exo2-Bold.woff");
+@include font("icomoon", normal, normal, "../fonts/icomoon.woff2", "../fonts/icomoon.woff");
+
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: "icomoon" !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-email:before {
+    content: "\e907";
+}
+._icon-mobile:before {
+    content: "\e908";
+}
+._icon-facebook:before {
+    content: "\e906";
+}
+._icon-arrowright:before {
+    content: "\e900";
+}
+._icon-instagramm:before {
+    content: "\e901";
+}
+._icon-viber:before {
+    content: "\e902";
+}
+._icon-watsapp:before {
+    content: "\e903";
+}
+._icon-smartphone:before {
+    content: "\e904";
+}
+._icon-telegram:before {
+    content: "\e905";
+}

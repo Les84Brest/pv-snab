@@ -1,0 +1,51 @@
+.section-header {
+    margin: 0 0 35px 0;
+    &::after {
+        content: "";
+        display: block;
+        width: 100px;
+        height: 5px;
+        background: $accent;
+    }
+
+    &__decription {
+        color: $accent;
+        font-weight: bold;
+        @include adaptiveValue("font-size", 24, 18);
+        margin: 0 0 calc(16px / 24px * 1em) 0;
+        font-family: $boldFont;
+    }
+    &__title {
+        color: $colorBlack;
+        font-weight: 700;
+        @include adaptiveValue("font-size", 40, 30);
+        margin: 0 0 calc(16px / 30px * 1em) 0;
+        font-family: $boldFont;
+        text-transform: uppercase;
+    }
+}
+
+.btn {
+    min-height: 70px;
+    border-radius: 15px;
+    border: none;
+    font-size: 20px;
+    line-height: 70px;
+    padding-left: 40px ;
+    padding-right: 40px ;
+    cursor: pointer;
+
+    &.primary {
+        background-color: $accent;
+        box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.45);
+        color: $colorWhite;
+    }
+
+    &.outlined {
+        background: transparent;
+        border: 1px solid  $accent;
+        color: $accent;
+    }
+
+}
+
