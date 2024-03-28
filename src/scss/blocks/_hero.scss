@@ -1,0 +1,9 @@
+.hero {
+    &__wrapper{
+        min-width: 100%;
+        min-height: 100vh;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 60px;
+    }
+}

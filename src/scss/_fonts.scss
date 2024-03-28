@@ -4,7 +4,6 @@
 @include font("Exo2", normal, 800, "../fonts/Exo2-Bold.woff2", "../fonts/Exo2-Bold.woff");
 @include font("icomoon", normal, normal, "../fonts/icomoon.woff2", "../fonts/icomoon.woff");
 
-
 [class^="_icon-"],
 [class*=" _icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
@@ -20,11 +19,17 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-info:before {
+    content: "\e90a";
+}
 ._icon-email:before {
     content: "\e907";
 }
 ._icon-mobile:before {
     content: "\e908";
+}
+._icon-chevrone:before {
+    content: "\e909";
 }
 ._icon-facebook:before {
     content: "\e906";

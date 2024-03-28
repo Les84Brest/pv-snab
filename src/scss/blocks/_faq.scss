@@ -1,0 +1,55 @@
+.accordion-faq {
+    &__item {
+        padding: 0 0 45px 0;
+        border-bottom: 1px solid $colorBlack;
+
+        &:not(:last-child) {
+            margin-bottom: 47px;
+        }
+
+        &.active {
+            .accordion-faq__question {
+                margin: 0 0 30px 0;
+            }
+
+            .accordion-faq__answer {
+                display: block;
+            }
+        }
+    }
+
+    &__question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+    }
+    &__question-text {
+        @include adaptiveValue("font-size", 35, 24);
+        padding: 0 calc(50 / 16 * 1em) 0 0;
+        font-family: $boldFont;
+        color: $colorBlack;
+    }
+    &__question-icon {
+        font-size: 24px;
+        @media (max-width: $md) {
+            font-size: 20px;
+        }
+    }
+    &__answer {
+        display: none;
+        font-size: 20px;
+        line-height: 1.2;
+        p {
+            &:not(:last-child) {
+                margin-bottom: calc(24 / 16 * 1em);
+            }
+        }
+
+        @media (max-width: $md) {
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}

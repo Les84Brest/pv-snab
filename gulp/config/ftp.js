@@ -11,10 +11,3 @@ export const configFTP = {
     parrallel: process.env.FTP_PARRALLEL
 }
 
-// export const configFTP = {
-//     host: "s9.open.by",
-//     port: 21,
-//     user: "devsctl@dev.safecontrol.by",
-//     password: "kL~0,MF*ar!M",
-//     parrallel: 10
-// }
