@@ -6,38 +6,41 @@
         &:not(:last-child) {
             margin-bottom: 47px;
         }
-
-        &.active {
-            .accordion-faq__question {
-                margin: 0 0 30px 0;
-            }
-
-            .accordion-faq__answer {
-                display: block;
-            }
-        }
     }
 
-    &__question {
+    &._init &__question {
         display: flex;
         justify-content: space-between;
         align-items: center;
         cursor: pointer;
-    }
-    &__question-text {
-        @include adaptiveValue("font-size", 35, 24);
-        padding: 0 calc(50 / 16 * 1em) 0 0;
-        font-family: $boldFont;
-        color: $colorBlack;
-    }
-    &__question-icon {
-        font-size: 24px;
-        @media (max-width: $md) {
-            font-size: 20px;
+
+        &::after {
+            content: "\e909";
+            font-size: 24px;
+            font-family: "icomoon";
+            transform: rotate(180deg);
+            transition: transform 0.3s ease-in;
         }
     }
+
+    &._init &__question._active {
+        &::after {
+            transform: rotate(0deg);
+        }
+    }
+    &__question {
+        @include adaptiveValue("font-size", 35, 24);
+        width: 100%;
+        padding: 0 1em 0 0;
+        font-family: $boldFont;
+        color: $colorBlack;
+        border: none;
+        background: transparent;
+        text-align: left;
+    }
+
     &__answer {
-        display: none;
+        margin-top: 30px;
         font-size: 20px;
         line-height: 1.2;
         p {
@@ -52,4 +55,11 @@
             }
         }
     }
+}
+
+.jkjk {
+    background: greenyellow;
+    color: red;
+    font-size: 50px;
+    margin: 30px 0 35px 0;
 }

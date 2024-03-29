@@ -1,0 +1,38 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    z-index: 10;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: linear-gradient(180deg, rgba($colorBlack, 0.46) 0%, rgba(2, 0, 36, 0) 37%);
+        pointer-events: none;
+    }
+}
+.menu-header {
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__link {
+        color: $colorWhite;
+        text-decoration: none;
+        line-height: 50px;
+        font-size: 20px;
+        transition: color 0.3s ease-in;
+        @include mediaHover {
+            &:hover {
+                color: $accent;
+                font-weight: bold;
+            }
+        }
+    }
+}
