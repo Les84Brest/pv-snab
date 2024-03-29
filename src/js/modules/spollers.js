@@ -1,5 +1,5 @@
 // Спойлеры.
-// Могут работать в режиме аккордиона или отедльно на блок. Исопользуется делигирование событий
+// Могут работать в режиме аккордиона (окрыт может быть один) или отедльно на блок. Исопользуется делигирование событий
 // Атрибуты блока
 // data-spollers - инициирует блок спойлеров
 // data-spollers-speed - кастомная скорость открытия / закрытия спойлера
@@ -23,16 +23,45 @@ export function initSpollers() {
         })
 
         if (spollersMedia.length > 0) {
-            processSpollers(spollers);
+            //группировка по запросам
+            const groupedMediaSpollers = spollersMedia.reduce((acc, spollerItem) => {
+                const { spollers: params = null } = spollerItem.dataset;
+
+                if (acc.hasOwnProperty(params)) {
+                    return { ...acc, [params]: [...acc[params], spollerItem] };
+                }
+
+                return { ...acc, [params]: [spollerItem] }
+            }, {});
+
+            Object.entries(groupedMediaSpollers).forEach(mediaQuery => {
+                const [key, spollersArray] = mediaQuery;
+                const [value, type] = key.split(",");
+
+                const mediaString = `(${type}-width: ${value}px)`;
+                const matchMedia = window.matchMedia(mediaString);
+                matchMedia.addEventListener("change", (event) => {
+                    processSpollers(spollersArray, event.matches);
+                });
+                processSpollers(spollersArray, matchMedia.matches);
+            });
+
         }
     }
 }
 
 function processSpollers(spollers, matchMedia = false) {
     spollers.forEach((spollerItem) => {
-        spollerItem.classList.add('_init');
-        initSpollerBody(spollerItem);
-        spollerItem.addEventListener("click", setSpollerAction);
+        if (matchMedia.matches || !matchMedia) {
+            spollerItem.classList.add('_init');
+            initSpollerBody(spollerItem);
+            spollerItem.addEventListener("click", setSpollerAction);
+        } else {
+            spollerItem.classList.remove('_init');
+            initSpollerBody(spollerItem, false);
+            spollerItem.removeEventListener("click", setSpollerAction);
+        }
+
     });
 }
 
@@ -41,7 +70,7 @@ function initSpollerBody(spoller, hideSpollerBody = true) {
 
     if (spollerTitles.length > 0) {
         spollerTitles.forEach((titleItem) => {
-            console.log('%chide', 'padding: 5px; background: DarkGreen; color: MediumSpringGreen;', hideSpollerBody);
+
             if (hideSpollerBody) {
 
                 titleItem.removeAttribute('tabindex');
