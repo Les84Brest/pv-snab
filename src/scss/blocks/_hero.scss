@@ -127,10 +127,10 @@
     justify-content: space-between;
     padding: 20px 0;
     @media (max-width: $md) {
-        padding: 0;
+        padding: 0 15px;
         flex-direction: row;
         justify-content: center;
-        gap: 20px;
+        @include adaptiveValue("gap", 20, 10);
     }
 
     &__phone,
@@ -138,7 +138,8 @@
         font-size: 36px;
     }
 
-    &__link {
+    &__link,
+    &__menu-btn {
         color: $colorWhite;
         text-decoration: none;
         transition: color 0.3s ease-in;
@@ -148,13 +149,18 @@
             }
         }
     }
+    &__menu-btn {
+        background: transparent;
+        border: none;
+        font-size: 36px;
+    }
 }
 
 .messengers {
     &__list {
         display: flex;
         flex-direction: column;
-        gap: 40px;
+        @include adaptiveValue("gap", 40, 20);
         @media (max-width: $md) {
             flex-direction: row;
         }

@@ -1,5 +1,6 @@
 @include font("Montserrat", normal, 400, "../fonts/Montserrat-Regular.woff2", "../fonts/Montserrat-Regular.woff2");
 @include font("Montserrat", normal, 500, "../fonts/Montserrat-Medium.woff2", "../fonts/Montserrat-Medium.woff2");
+@include font("Montserrat", normal, 700, "../fonts/Montserrat-Bold.woff2", "../fonts/Montserrat-Bold.woff2");
 @include font("Exo2", normal, 900, "../fonts/Exo2-Black.woff2", "../fonts/Exo2-Black.woff");
 @include font("Exo2", normal, 800, "../fonts/Exo2-Bold.woff2", "../fonts/Exo2-Bold.woff");
 @include font("icomoon", normal, normal, "../fonts/icomoon.woff2", "../fonts/icomoon.woff");
@@ -19,6 +20,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-menu:before {
+    content: "\e90b";
+}
+._icon-close:before {
+    content: "\e90c";
+}
 ._icon-info:before {
     content: "\e90a";
 }
