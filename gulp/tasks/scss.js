@@ -49,7 +49,6 @@ export const scss = () => {
             })
         ))
         // .pipe(app.plugins.replace(/@img\//g, '../img/'))
-        // .pipe( () => console.log('<< before replace >>'))
         .pipe(app.plugins.replace(/\@img\//g, '../img/'))
         .pipe(sass({
             outputStyle: "expanded"

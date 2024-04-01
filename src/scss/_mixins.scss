@@ -107,8 +107,17 @@
     }
 }
 
+
+//миксин для реакции на ховер 
 @mixin mediaHover {
     @media (any-hover: hover) {
+        @content;
+    }
+}
+
+// мискин для реакции на тачскрин
+@mixin mediaTouch {
+    @media (any-pointer: coarse) {
         @content;
     }
 }

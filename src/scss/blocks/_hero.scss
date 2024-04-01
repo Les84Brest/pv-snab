@@ -10,9 +10,7 @@
         display: grid;
         grid-template-columns: auto 60px;
         min-height: 100vh;
-        @media (max-width: $lg) {
-            min-height: 75vh;
-        }
+
         @media (max-width: $md) {
             grid-template-columns: 1fr;
             grid-template-rows: 1fr 60px;
@@ -133,7 +131,7 @@
         @include adaptiveValue("gap", 20, 10);
     }
 
-    &__phone,
+    &__menu,
     &__messengers {
         font-size: 36px;
     }
@@ -143,6 +141,9 @@
         color: $colorWhite;
         text-decoration: none;
         transition: color 0.3s ease-in;
+        font-size: 36px;
+        background: transparent;
+        border: none;
         @include mediaHover {
             &:hover {
                 color: darken($colorWhite, 25%);
@@ -150,9 +151,9 @@
         }
     }
     &__menu-btn {
-        background: transparent;
-        border: none;
-        font-size: 36px;
+        @media (max-width: $md) {
+            display: none;
+        }
     }
 }
 

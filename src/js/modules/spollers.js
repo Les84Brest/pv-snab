@@ -145,6 +145,7 @@ export let _slideUp = (target, duration = 500, showmore = 0) => {
             target.classList.remove('_slide');
             // Создаем событие
             document.dispatchEvent(new CustomEvent("slideUpDone", {
+                bubbles: true,
                 detail: {
                     target: target
                 }
@@ -180,6 +181,7 @@ export let _slideDown = (target, duration = 500, showmore = 0) => {
             target.classList.remove('_slide');
             // Создаем событие
             document.dispatchEvent(new CustomEvent("slideDownDone", {
+                bubbles: true,
                 detail: {
                     target: target
                 }

@@ -1,5 +1,12 @@
 // VARIABLES
 
+//global CSS vars
+
+:root {
+    --header-heigth: 60px;
+    --hero-bar-width: 60px;
+}
+
 //fonts
 $mainFont: "Montserrat", sans-serif;
 $boldFont: "Exo2", sans-serif;
@@ -43,3 +50,4 @@ $mdm: 767.98px;
 $lgm: 991.98px;
 $xlm: 1199.98px;
 $xxlm: 1399.98px;
+

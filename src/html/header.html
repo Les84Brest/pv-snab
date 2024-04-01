@@ -1,18 +1,48 @@
 <header class="header">
-  <div class="header__container">
-    <div class="header__menu">
-      <div class="header__menu-content menu-header">
-        
-        <nav class="menu-header__menu">
-          <ul class="menu-header__list">
-            <li class="menu-header__item"><a href="#" class="menu-header__link">Главная</a></li>
-            <li class="menu-header__item"><a href="#" class="menu-header__link">О нас</a></li>
-            <li class="menu-header__item"><a href="#" class="menu-header__link">Блог</a></li>
-            <li class="menu-header__item"><a href="#" class="menu-header__link">Услуги</a></li>
-            <li class="menu-header__item"><a href="#" class="menu-header__link">Вопросы</a></li>
-          </ul>
-        </nav>
-      </div>
+
+  <div class="header__body">
+    <a href="#" class="header__logo ">
+      <img src="@img/safecontrol-logo-dark.svg" alt="Промвидеоснаб лого">
+    </a>
+    <div class="header__burger">
+      <i class="_icon-menu"></i>
     </div>
-  </div>
+    <nav class="header__menu menu-body">
+      <ul class="header__list">
+        <li>
+          <a href="#" class="header__link">Главная</a>
+        </li>
+        <li>
+          <a href="#" class="header__link">Блог</a>
+        </li>
+        <li>
+          <a href="#" class="header__link">О нас</a>
+        </li>
+        <li>
+          <a href="#" data-goto=".faq" class="header__link">Вопросы</a>
+        </li>
+        <li>
+          <a href="#" class="header__link">Товары</a>
+          <i class="submenu-arrow"></i>
+          <ul class="menu-sublist">
+            <li><a href="" class="menu-sublist__link">первый товар</a></li>
+            <li><a href="" class="menu-sublist__link">Второй товар</a></li>
+            <li><a href="" class="menu-sublist__link">Третий товар</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" data-goto=".feedback" class="header__link">Обратная связь</a>
+          <i class="submenu-arrow"></i>
+          <ul class="menu-sublist">
+            <li><a href="" class="menu-sublist__link">Субменю 1</a></li>
+            <li><a href="" class="menu-sublist__link">Субменю 2</a></li>
+            <li><a href="" class="menu-sublist__link">Субменю 3</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#" class="header__link">Акции</a>
+        </li>
+      </ul>
+    </nav>
+
 </header>
