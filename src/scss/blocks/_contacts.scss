@@ -1,0 +1,67 @@
+.contacts {
+    &__messengers {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0 0 90px 0;
+        @include adaptiveValue("column-gap", 200, 50);
+        @include adaptiveValue("row-gap", 60, 30);
+
+        @media (max-width: $md) {
+            grid-template-columns: 1fr;
+        }
+        &-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        &-content-title {
+            @include adaptiveValue("font-size", 35, 23);
+            font-family: $boldFont;
+        }
+
+        &-content-text {
+            @include adaptiveValue("font-size", 27, 20);
+        }
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &__grid-item {
+        justify-content: center;
+        display: flex;
+        gap: 30px;
+        border-bottom: 2px solid $colorBlack;
+        @include adaptiveValue("padding-bottom", 80, 30);
+
+        @media (max-width: $sm) {
+            gap: 10px;
+        }
+    }
+    &__grid-icon {
+        font-size: 85px;
+    }
+}
+
+.messengers-contacts {
+    &__list {
+        display: flex;
+        gap: 100px;
+        margin: 0 0 calc(45 / 16 * 1em) 0;
+        font-size: 45px;
+        @include adaptiveValue("font-size", 45, 28);
+        @include adaptiveValue("gap", 100, 50);
+    }
+    &__link {
+        text-decoration: none;
+        color: $colorBlack;
+    }
+}

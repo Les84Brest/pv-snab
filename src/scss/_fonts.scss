@@ -20,6 +20,12 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-clock:before {
+    content: "\e90d";
+}
+._icon-mappin:before {
+    content: "\e90e";
+}
 ._icon-menu:before {
     content: "\e90b";
 }

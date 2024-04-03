@@ -1,44 +1,75 @@
-
+/**
+ * This is class to manage modal window
+ * It waits
+ * modalNode - selector for modal node
+ * options - an object with
+ *  template - template node with data to show in modal
+ *  selectors - selector names which are responsible for manage modal states
+*/
 class Modal {
-  modalNode = null;
+  modalObject = null;
 
-  constructor(modalNode) {
-    this.modalNode = modalNode;
+  options = {
+    templateId: null, // template tag with modal layout
+    selectors: {
+      modal: 'modal',
+      modalBody: 'modal__body',
+      modalClose: 'modal__close',
+      modalOpen: 'modal__open',
+      bodyLock: 'lock-body'
+    }
+  }
+
+  constructor(options) {
+
+    this.options = { ...this.options, ...options };
     this.initModal();
   }
 
   initModal() {
-    if (this.modalNode) {
-      this.modalNode.addEventListener('click', (event) => {
-        if(!event.target.closest('.modal__body')){
+    const { modal: modalClass, modalClose, modalBody } = this.options.selectors;
+
+    const modalNode = document.querySelector(`.${modalClass}`);
+
+    if (modalNode) {
+      this.modalObject = modalNode;
+
+      this.modalObject.addEventListener('click', (event) => {
+        console.log('%clistener works', 'padding: 5px; background: #3dd; color: #333333;');
+        if (!event.target.closest(`.${modalBody}`)) {
           this.closeModal();
         }
-      } );
+      });
 
-      this.modalNode.querySelector('.modal__close')
+      modalNode.querySelector('.modal__close')
         .addEventListener('click', this.closeModal.bind(this));
+
     }
   }
 
   openModal() {
-    this.modalNode.classList.add('modal__open');
+    const { modalOpen } = this.options.selectors;
+    this.modalObject.classList.add(`${modalOpen}`);
     this.lockBody();
   }
 
   closeModal() {
-    this.modalNode.classList.remove('modal__open');
+    const { modalOpen } = this.options.selectors;
+    this.modalObject.classList.remove(`${modalOpen}`);
     this.unlockBody();
   }
 
   lockBody() {
-    const scrollPadding = window.innerWidth - document.querySelector('.main').offsetWidth +'px';
+    const { bodyLock } = this.options.selectors;
+    const scrollPadding = window.innerWidth - document.querySelector('.main').offsetWidth + 'px';
     document.body.style.paddingRight = scrollPadding;
-    document.body.classList.add('body-lock');
+    document.body.classList.add(`${bodyLock}`);
   }
 
-  unlockBody(){
-    document.body.style.paddingRight = '';
-    document.body.classList.remove('body-lock');
+  unlockBody() {
+    const { bodyLock } = this.options.selectors;
+    document.body.style.paddingRight = null;
+    document.body.classList.remove(`${bodyLock}`);
   }
 }
 

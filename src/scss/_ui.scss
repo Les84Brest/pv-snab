@@ -31,21 +31,37 @@
     border: none;
     font-size: 20px;
     line-height: 70px;
-    padding-left: 40px ;
-    padding-right: 40px ;
+    padding-left: 40px;
+    padding-right: 40px;
     cursor: pointer;
 
     &.primary {
         background-color: $accent;
         box-shadow: 0px 3px 8px 0 rgba(0, 0, 0, 0.45);
         color: $colorWhite;
+        transition: all 0.3s ease-in;
+        &:hover {
+            color: darken($colorWhite, 15%);
+            background-color: darken($accent, 15%);
+        }
+        &:active {
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
     }
 
     &.outlined {
         background: transparent;
-        border: 1px solid  $accent;
+        border: 2px solid $accent;
         color: $accent;
+        transition: all 0.3s ease-in;
+
+        &:hover {
+            border: 2px solid $colorBlack;
+            color: $colorBlack;
+        }
+
+        &:active {
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.7);
+        }
     }
-
 }
-

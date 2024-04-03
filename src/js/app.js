@@ -2,6 +2,7 @@ import * as siteFunctions from "./modules/functions.js";
 import { initSpollers } from "./modules/spollers.js";
 import { initMenu } from "./modules/menu.js";
 import Swiper, { Navigation, Pagination } from "swiper";
+import Modal from "./modules/modal.js";
 
 
 siteFunctions.isWebp();
@@ -9,5 +10,24 @@ siteFunctions.isWebp();
 document.addEventListener('DOMContentLoaded', function () {
     initMenu();
     initSpollers();
+
+
+    //init modal for company data
+    const modalOptions = {
+        templateId: "company-data", // template tag with modal layout
+        selectors: {
+            modal: 'modal',
+            modalBody: 'modal__body',
+            modalClose: 'modal__close',
+            modalOpen: 'modal__open',
+            bodyLock: '_scroll-lock'
+        }
+    }
+    const companyDataModal = new Modal(modalOptions);
+    const dataBtn = document.querySelector('.contacts__action-btn');
+    dataBtn.addEventListener("click", function (e) {
+        companyDataModal.openModal();
+        
+    });
 });
 
